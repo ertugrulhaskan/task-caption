@@ -66,10 +66,10 @@ export default {
       this.todos.push();
     },
     deleteTodo: function(todoID) {
-      this.todos.splice(
-        this.todos.filter(item => item._id === todoID),
-        1
-      );
+      let fetchIndex = this.todos
+        .map(item => item._id === todoID)
+        .indexOf(true);
+      this.todos.splice(fetchIndex, 1);
     }
   }
 };

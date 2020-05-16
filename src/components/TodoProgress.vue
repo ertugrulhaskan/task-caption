@@ -15,6 +15,8 @@
 </template>
 
 <script>
+import moment from "moment";
+
 export default {
   name: "TodoProgress",
   props: {
@@ -26,33 +28,7 @@ export default {
   mounted: function() {},
   computed: {
     getToday: function() {
-      let monthNames = [
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December"
-      ];
-      let dayNames = [
-        "Sunday",
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday"
-      ];
-      let date = new Date();
-      return `${date.getDate()} ${
-        monthNames[date.getMonth()]
-      } ${date.getFullYear()}, ${dayNames[date.getDay()]}`;
+      return moment(new Date()).format("MMMM Do YYYY, dddd");
     },
     getTodosCount: function() {
       return this.todosListing.length;
