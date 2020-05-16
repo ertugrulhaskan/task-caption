@@ -1,18 +1,76 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div>
+    <todo-header @todoAdding="addTodo"></todo-header>
+    <div class="container">
+      <todo-progress :todosListing="todos"></todo-progress>
+      <todo-list>
+        <todo-item
+          v-for="todo in todos"
+          :key="todo._id"
+          :todo="todo"
+          @todoUpdating="updateTodo"
+          @todoRemoving="deleteTodo"
+        ></todo-item>
+      </todo-list>
+    </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+
+import TodoHeader from "../components/TodoHeader";
+import TodoProgress from "../components/TodoProgress";
+import TodoList from "../components/TodoList";
+import TodoItem from "../components/TodoItem";
 
 export default {
   name: "Home",
+  data() {
+    return {
+      todos: [
+        {
+          _id: 1578246344875,
+          todoItem: "Learn VueJS",
+          completed: false
+        },
+        {
+          _id: 1578249168815,
+          todoItem: "Learn ReactJS",
+          completed: false
+        },
+        {
+          _id: 1578249181270,
+          todoItem: "Meeting team",
+          completed: true
+        },
+        {
+          _id: 1578249181288,
+          todoItem: "Meeting your friends",
+          completed: true
+        }
+      ]
+    };
+  },
   components: {
-    HelloWorld
+    TodoHeader,
+    TodoList,
+    TodoItem,
+    TodoProgress
+  },
+  methods: {
+    addTodo: function(newTodoItem) {
+      this.todos.push(newTodoItem);
+    },
+    updateTodo: function() {
+      this.todos.push();
+    },
+    deleteTodo: function(todoID) {
+      this.todos.splice(
+        this.todos.filter(item => item._id === todoID),
+        1
+      );
+    }
   }
 };
 </script>
