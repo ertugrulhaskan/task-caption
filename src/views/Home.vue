@@ -32,7 +32,7 @@ export default {
         {
           _id: 1578246344875,
           todoItem: "Learn VueJS",
-          completed: false
+          completed: true
         },
         {
           _id: 1578249168815,
@@ -41,13 +41,13 @@ export default {
         },
         {
           _id: 1578249181270,
-          todoItem: "Meeting team",
+          todoItem: "Learn Meteor",
           completed: true
         },
         {
           _id: 1578249181288,
-          todoItem: "Meeting your friends",
-          completed: true
+          todoItem: "Meet your friends",
+          completed: false
         }
       ]
     };

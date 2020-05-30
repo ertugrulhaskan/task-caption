@@ -116,10 +116,12 @@ ul {
       top: 0.75rem;
       width: 24px;
       height: 24px;
-      background: #fff;
-      border: 1px solid #ebebeb;
-      border-radius: 50%;
       line-height: 20px;
+      font-weight: 800;
+      color: #fff;
+      background: #C53030;
+      border: 1px solid #9B2C2C;
+      border-radius: 50%;
     }
   }
 }
@@ -160,31 +162,3 @@ input[type="checkbox"] {
     }
   }
 }
-
-// /* #app styles */
-// #app.sticky .todo-header {
-//   z-index: 2;
-//   position: fixed;
-//   left: 0;
-//   right: 0;
-//   bottom: 0;
-//   border-top: 1px solid #ebebeb;
-// }
-
-// #app.sticky .todo-header h1 {
-//   display: none;
-// }
-
-// #app.sticky .todo-progress-box {
-//   z-index: 2;
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   right: 0;
-//   padding: 1rem;
-//   margin: 0 auto;
-//   background: #fff;
-//   border-bottom: 1px solid #ebebeb;
-//   border-radius: 0;
-//   box-shadow: 0 2px 1px 1px #ebebeb;
-// }

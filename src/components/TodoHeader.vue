@@ -31,9 +31,13 @@ export default {
   },
   methods: {
     createTodo: function() {
+      let value = this.todoItem && this.todoItem.trim();
+      if (!value) {
+        return;
+      }
       this.$emit("todoAdding", {
         _id: Date.parse(new Date()),
-        todoItem: this.todoItem,
+        todoItem: value,
         completed: false
       });
       this.todoItem = "";
